@@ -1,0 +1,68 @@
+
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" action="register">
+                        {% csrf_token %}
+                        <h2 class="form-title">Create account</h2>
+                        <div class="form-group">
+                            {% csrf_token %}
+                            <input type="text" class="form-input" name="fname" id="fname" placeholder="Your First Name" required/>
+                        </div>
+                        <div class="form-group">{% csrf_token %}
+                            <input type="text" class="form-input" name="lname" id="lname" placeholder="Your Last Name"/ required>
+                        </div>
+                        <div class="form-group">{% csrf_token %}
+                            <input type="text" class="form-input" name="username" id="username" placeholder="{{ username }}"required/>
+                        </div>
+                        <div class="form-group">{% csrf_token %}
+                            <input type="email" class="form-input" name="email" id="email" placeholder="{{ email }}"required/>
+                        </div>
+                        <div class="form-group">{% csrf_token %}
+                            <input type="password" class="form-input" name="password" id="password" placeholder="{{ pass1 }}"required/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">{% csrf_token %}
+                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="{{ pass2 }}"required/>
+                            <!--<span toggle="#re_password" class="zmdi zmdi-eye field-icon toggle-password"></span>-->
+                        </div>
+                        <div class="form-group">{% csrf_token %}
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Have already an account ? <a href="/" class="login">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %} "></script>
+    <script src="{% static 'js/main.js'%} "></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
